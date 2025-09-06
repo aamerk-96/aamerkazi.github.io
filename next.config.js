@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isCI = process.env.GITHUB_ACTIONS === 'true';
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')?.[1] || '';
-const isUserOrOrgPages = repoName.toLowerCase().endsWith('.github.io');
+const [owner, repoName] = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
+const isUserOrOrgPages = !!owner && !!repoName && repoName.toLowerCase() === `${owner.toLowerCase()}.github.io`;
 
-// For user/org pages (<user>.github.io), site is served at root: no basePath
-// For project pages, serve under /<repo>
-const basePath = isCI && repoName && !isUserOrOrgPages ? `/${repoName}` : '';
+// For user/org pages (<owner>.github.io), site is served at root: no basePath
+// For project pages (anything else), serve under /<repo>
+const basePath = isCI && repoName ? (isUserOrOrgPages ? '' : `/${repoName}`) : '';
 
 const nextConfig = {
   output: 'export',
