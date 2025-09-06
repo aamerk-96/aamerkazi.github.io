@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const isCI = process.env.GITHUB_ACTIONS === 'true';
 const repoName = process.env.GITHUB_REPOSITORY?.split('/')?.[1] || '';
+const isUserOrOrgPages = repoName.toLowerCase().endsWith('.github.io');
 
-const basePath = isCI && repoName ? `/${repoName}` : '';
+// For user/org pages (<user>.github.io), site is served at root: no basePath
+// For project pages, serve under /<repo>
+const basePath = isCI && repoName && !isUserOrOrgPages ? `/${repoName}` : '';
 
 const nextConfig = {
   output: 'export',
@@ -12,7 +15,7 @@ const nextConfig = {
   },
   trailingSlash: true, // safer for static hosts like GitHub Pages
   basePath,
-  assetPrefix: basePath,
+  assetPrefix: basePath || undefined,
 };
 
 module.exports = nextConfig;
