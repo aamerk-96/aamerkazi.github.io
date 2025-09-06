@@ -6,7 +6,9 @@ export default function SkillsGrid({ skills, className = "" }) {
     { key: "scipy", name: "SciPy" },
     { key: "pandas", name: "Pandas" },
     { key: "numpy", name: "NumPy" },
-    { key: "fea", name: "FEA (Finite Element Analysis)" },
+  { key: "fea", name: "FEA (Finite Element Analysis)" },
+  { key: "git", name: "Git" },
+  { key: "tensorflow", name: "TensorFlow" },
     { key: "open3d", name: "Open3D" },
     { key: "trimesh", name: "Trimesh" },
   ];
@@ -76,6 +78,27 @@ export default function SkillsGrid({ skills, className = "" }) {
         <path fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" d="M12 3 20 7v10l-8 4-8-4V7l8-4Z" />
         <path fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" d="M12 3v10l8 4M12 13 4 9" />
         <path fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" d="M8 11l8 4M8 7l8 4" />
+        <circle cx="12" cy="13" r=".8" fill="currentColor" />
+        <circle cx="8" cy="11" r=".8" fill="currentColor" />
+        <circle cx="16" cy="15" r=".8" fill="currentColor" />
+      </svg>
+    ),
+
+    // Git: branch icon
+    git: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M6 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 4v6a4 4 0 0 0 4 4h2" />
+        <circle cx="12" cy="17" r="2" fill="currentColor" />
+        <circle cx="16" cy="5" r="2" fill="currentColor" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" d="M12 15V9a4 4 0 0 1 4-4" />
+      </svg>
+    ),
+
+    // TensorFlow: stylized TF blocks
+    tensorflow: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M4 8l8-4 8 4-2.5 1.2L12 6.6 6.5 9.2 4 8Z" />
+        <path fill="currentColor" d="M10 10.2 12 9.4v9.2l-2 .9v-9.3Zm4 0 2-.8v5.3h2v2.1h-4v-6.6Z" />
       </svg>
     ),
 
