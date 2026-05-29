@@ -1,34 +1,4 @@
-type Project = {
-  name: string;
-  desc: string;
-  href: string;
-  year?: string;
-  tags?: string[];
-};
-
-const projects: Project[] = [
-  {
-    name: "FEA Heat Simulation",
-    desc: "GPU-accelerated finite element heat transfer solver with interactive web visualizations and report-ready outputs.",
-    href: "#",
-    year: "2025",
-    tags: ["TypeScript", "Next.js", "WebGL", "FEA"],
-  },
-  {
-    name: "ML Defect Detection",
-    desc: "End-to-end pipeline for anomaly detection on manufacturing images with model training, MLOps, and dashboards.",
-    href: "#",
-    year: "2024",
-    tags: ["Python", "PyTorch", "OpenCV", "MLOps"],
-  },
-  {
-    name: "3D Point Cloud Tools",
-    desc: "Fast point cloud registration and mesh utilities with WebAssembly bindings and an intuitive UI.",
-    href: "#",
-    year: "2024",
-    tags: ["Rust", "WASM", "Three.js"],
-  },
-];
+import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
@@ -36,24 +6,28 @@ export default function Projects() {
       <h2 className="section-title">Featured Projects</h2>
       <div className="fp-list">
         {projects.map((p, idx) => (
-          <a key={p.name} className="fp-item reveal" href={p.href} target="_blank" rel="noopener noreferrer">
+          <article key={p.title} className="fp-item reveal">
+            <div className="fp-accent" aria-hidden="true" />
             <div className="fp-content">
               <div className="fp-meta">
-                <span className="badge">Featured</span>
-                {p.year ? <span className="muted">· {p.year}</span> : null}
+                <span className="badge">Project {p.id}</span>
+                <span className="muted">· {p.year}</span>
               </div>
-              <h3 className="fp-title">{p.name}</h3>
-              <p className="fp-desc muted">{p.desc}</p>
-              {p.tags?.length ? (
+              <div className="fp-category">{p.category}</div>
+              <h3 className="fp-title">{p.title}</h3>
+              <p className="fp-tagline">{p.tagline}</p>
+              <p className="fp-desc muted">{p.description}</p>
+              {p.tech.length ? (
                 <div className="fp-tags">
-                  {p.tags.map((t) => (
-                    <span className="chip" key={t}>{t}</span>
+                  {p.tech.map((t) => (
+                    <span className="chip chip-tech" key={t}>{t}</span>
                   ))}
                 </div>
               ) : null}
+              <a className="fp-link" href={p.href}>View details</a>
             </div>
             <div className="fp-preview" aria-hidden="true" data-i={idx} />
-          </a>
+          </article>
         ))}
       </div>
     </div>

@@ -457,19 +457,42 @@ footer {
     linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
 }
 .fp-content { position: relative; z-index: 2; }
+.fp-accent {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--blue), transparent 78%);
+  opacity: 0.9;
+}
 .fp-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.fp-category {
+  color: var(--teal);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
 .badge {
   padding: 4px 8px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px;
   background: rgba(96,165,250,0.14); color: var(--lightblue); border: 1px solid rgba(96,165,250,0.35);
 }
 .fp-title { font-size: clamp(20px, 3.6vw, 26px); font-weight: 700; margin: 4px 0 8px; }
+.fp-tagline { color: var(--text); font-size: 15px; margin-bottom: 10px; }
 .fp-desc { line-height: 1.7; }
 .fp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .chip {
   padding: 6px 10px; font-size: 12px; color: var(--text); border-radius: 999px;
   background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
 }
+.chip-tech { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); }
 .chip:hover { border-color: rgba(20,184,166,0.35); }
+.fp-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--lightblue);
+  font-size: 14px;
+}
+.fp-link:hover { color: var(--text); }
 
 /* Right-side preview gradient block imitates a visual thumbnail */
 .fp-preview {

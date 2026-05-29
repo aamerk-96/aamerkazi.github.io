@@ -1,18 +1,4 @@
-export default function SkillsGrid({ skills, className = "" }) {
-  const defaultSkills = [
-    { key: "python", name: "Python" },
-    { key: "pytorch", name: "PyTorch" },
-    { key: "scikit", name: "scikit-learn" },
-    { key: "scipy", name: "SciPy" },
-    { key: "pandas", name: "Pandas" },
-    { key: "numpy", name: "NumPy" },
-  { key: "fea", name: "FEA (Finite Element Analysis)" },
-  { key: "git", name: "Git" },
-  { key: "tensorflow", name: "TensorFlow" },
-    { key: "open3d", name: "Open3D" },
-    { key: "trimesh", name: "Trimesh" },
-  ];
-
+export default function SkillsGrid({ groups = [], className = "" }) {
   const iconMap = {
     // Python: simplified dual-blob symbol
     python: (
@@ -102,6 +88,131 @@ export default function SkillsGrid({ skills, className = "" }) {
       </svg>
     ),
 
+    transformers: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M4 7h16M4 12h16M4 17h16" />
+        <circle cx="8" cy="7" r="1.3" fill="currentColor" />
+        <circle cx="16" cy="12" r="1.3" fill="currentColor" />
+        <circle cx="10" cy="17" r="1.3" fill="currentColor" />
+      </svg>
+    ),
+
+    xgboost: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" d="M6 6l12 12M18 6 6 18" />
+      </svg>
+    ),
+
+    lightgbm: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M6 18h2V8H6v10Zm5 0h2V5h-2v13Zm5 0h2v-8h-2v8Z" />
+      </svg>
+    ),
+
+    diffusionnet: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M4 12c2-5 6-7 8-7s6 2 8 7c-2 5-6 7-8 7s-6-2-8-7Z" />
+        <circle cx="12" cy="12" r="2" fill="currentColor" />
+      </svg>
+    ),
+
+    optuna: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M5 19 19 5" />
+        <circle cx="7" cy="17" r="2" fill="currentColor" />
+        <circle cx="17" cy="7" r="2" fill="currentColor" />
+      </svg>
+    ),
+
+    langgraph: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="6" cy="12" r="2" fill="currentColor" />
+        <circle cx="12" cy="6" r="2" fill="currentColor" />
+        <circle cx="18" cy="12" r="2" fill="currentColor" />
+        <circle cx="12" cy="18" r="2" fill="currentColor" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M8 12h8M12 8v8" />
+      </svg>
+    ),
+
+    mlflow: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M5 16h3V8H5v8Zm5 0h3V5h-3v11Zm5 0h3v-6h-3v6Z" />
+      </svg>
+    ),
+
+    clearml: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M5 7h14v10H5z" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M8 10h8M8 14h5" />
+      </svg>
+    ),
+
+    abaqus: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M12 3 20 7v10l-8 4-8-4V7l8-4Z" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M12 3v18M4 7l16 10" />
+      </svg>
+    ),
+
+    "drucker-prager": (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M12 4 20 18H4L12 4Z" />
+      </svg>
+    ),
+
+    "johnson-cook": (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M6 18c4-8 8-8 12 0" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M6 6h12" />
+      </svg>
+    ),
+
+    constitutive: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M6 18V6l12 12V6" />
+      </svg>
+    ),
+
+    damage: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M8 4h8l4 8-8 8-8-8 4-8Z" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M12 8v8" />
+      </svg>
+    ),
+
+    vv: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="m5 12 4 4L19 6" />
+      </svg>
+    ),
+
+    matlab: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M5 17 10 6l4 8 5-7-3 11H5Z" />
+      </svg>
+    ),
+
+    docker: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M5 11h3v3H5zM9 11h3v3H9zM13 11h3v3h-3zM9 7h3v3H9zM13 7h3v3h-3z" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M4 15h11c2.5 0 4.1-1.1 5-3" />
+      </svg>
+    ),
+
+    bedrock: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="5" y="5" width="14" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M8 9h8M8 12h8M8 15h5" />
+      </svg>
+    ),
+
+    vertex: (
+      <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="1.5" d="M4 18 12 5l8 13" />
+        <circle cx="12" cy="13" r="1.6" fill="currentColor" />
+      </svg>
+    ),
+
     // Open3D: axes triad
     open3d: (
       <svg width={28} height={28} viewBox="0 0 24 24" aria-hidden="true">
@@ -124,28 +235,35 @@ export default function SkillsGrid({ skills, className = "" }) {
     </svg>
   );
 
-  const list = Array.isArray(skills) && skills.length > 0 ? skills : defaultSkills;
   const wrapper = `bg-gray-900 px-6 py-10 rounded-2xl ${className}`.trim();
 
   return (
     <div className={wrapper}>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
-        {list.map((s) => {
-          const icon = iconMap[s.key] || fallbackIcon;
-          return (
-            <div
-              key={s.key}
-              className="group relative flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-5 text-gray-200 transition-transform duration-200 hover:scale-105 hover:text-teal-400"
-            >
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-md border border-white/15 bg-white/10 px-2 py-1 text-xs text-gray-100 opacity-0 shadow-lg backdrop-blur-sm transition-opacity duration-150 group-hover:opacity-100 pointer-events-none">
-                {s.name}
-              </div>
-              <span className="sr-only">{s.name}</span>
-              <div aria-hidden="true">{icon}</div>
-              <div className="mt-3 text-sm font-medium text-gray-300 group-hover:text-teal-400 transition-colors">{s.name}</div>
+      <div className="space-y-8">
+        {groups.map((group) => (
+          <div key={group.title}>
+            <div className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-teal-300/90">
+              {group.title}
             </div>
-          );
-        })}
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4">
+              {group.items.map((skill) => {
+                const icon = iconMap[skill.key] || fallbackIcon;
+
+                return (
+                  <div
+                    key={skill.key}
+                    className="group flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center text-gray-200 transition-transform duration-200 hover:scale-[1.03] hover:text-teal-400"
+                  >
+                    <div aria-hidden="true">{icon}</div>
+                    <div className="mt-3 text-sm font-medium text-gray-300 group-hover:text-teal-400 transition-colors">
+                      {skill.name}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

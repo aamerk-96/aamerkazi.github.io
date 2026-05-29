@@ -1,16 +1,7 @@
 import SkillsGrid from "./SkillsGrid";
+import { skillGroups } from "../data/skills";
 
 export default function About() {
-	const skills = [
-		{ key: "fea", name: "FEA (Mesh & Nodes)" },
-		{ key: "python", name: "Python" },
-		{ key: "pandas", name: "Pandas" },
-		{ key: "pytorch", name: "PyTorch" },
-		{ key: "git", name: "Git" },
-		{ key: "tensorflow", name: "TensorFlow" },
-		{ key: "scikit", name: "Scikit-learn" },
-	];
-
 	return (
 		<div className="container content-grid">
 			<div className="card pop-card about-card">
@@ -21,7 +12,7 @@ export default function About() {
 					<span>About Me</span>
 				</div>
 				<p className="about-summary muted">
-					My work lives at the intersection of deep scientific simulation and applied machine learning, a space where I've found a passion for solving high-stakes challenges in medical technology. I enjoy taking ownership of the full project lifecycle, from reframing a core business problem and architecting advanced predictive models to rigorously validating their output against physical FEA simulations. For me, the process doesn't end at deployment; I thrive on digging into production data, root-causing complex issues, and collaborating across teams to engineer robust solutions. Whether I'm diving deep into feature engineering or designing novel optimization workflows, my focus is always on using the right tool to bridge the gap between a theoretical model and a reliable, real-world product with tangible impact.
+					I work at the intersection of physics-based simulation and applied machine learning. My PhD focused on nonlinear finite element modeling of manufacturing processes — building high-fidelity ABAQUS models with experimental validation under U.S. DOE and Honeywell programs. Today, at Align Technology, I ship production machine learning models for orthodontic treatment planning serving millions of patients annually under FDA regulatory oversight. I'm most interested in problems where domain knowledge changes how a model should be built — physics-informed features, geometric priors, constraint-aware optimization.
 				</p>
 			</div>
 
@@ -32,7 +23,7 @@ export default function About() {
 					</span>
 					<span>Skills</span>
 				</div>
-				<SkillsGrid skills={skills} className="h-full" />
+				<SkillsGrid groups={skillGroups} className="h-full" />
 			</div>
 		</div>
 	);
