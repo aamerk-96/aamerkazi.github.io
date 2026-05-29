@@ -1,53 +1,63 @@
-export type SkillItem = {
-  key: string;
-  name: string;
-};
-
 export type SkillGroup = {
-  title: string;
-  items: SkillItem[];
+  label: string;
+  accent: "orange" | "blue" | "green";
+  items: string[];
 };
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Machine Learning & Deep Learning",
+    label: "Machine Learning & AI",
+    accent: "orange",
     items: [
-      { key: "pytorch", name: "PyTorch" },
-      { key: "tensorflow", name: "TensorFlow" },
-      { key: "scikit", name: "scikit-learn" },
-      { key: "transformers", name: "Transformers" },
-      { key: "xgboost", name: "XGBoost" },
-      { key: "lightgbm", name: "LightGBM" },
-      { key: "diffusionnet", name: "DiffusionNet" },
-      { key: "optuna", name: "Bayesian Optimization (Optuna)" },
-      { key: "langgraph", name: "LangGraph" },
-      { key: "mlflow", name: "MLflow" },
-      { key: "clearml", name: "ClearML" }
-    ]
+      "PyTorch",
+      "TensorFlow",
+      "Transformers / HuggingFace",
+      "scikit-learn",
+      "XGBoost / LightGBM",
+      "DiffusionNet",
+      "Optuna",
+      "LangGraph",
+      "MLflow",
+      "ClearML",
+      "Physics-Informed ML",
+    ],
   },
   {
-    title: "Simulation & Mechanics",
+    label: "Simulation & Computational Mechanics",
+    accent: "blue",
     items: [
-      { key: "abaqus", name: "ABAQUS" },
-      { key: "drucker-prager", name: "Drucker–Prager" },
-      { key: "johnson-cook", name: "Johnson–Cook" },
-      { key: "constitutive", name: "Constitutive Modeling" },
-      { key: "damage", name: "Damage & Fracture" },
-      { key: "vv", name: "V&V (Verification & Validation)" }
-    ]
+      "ABAQUS (Explicit & Standard)",
+      "Nonlinear FEA",
+      "Constitutive Modeling",
+      "Drucker–Prager / Johnson–Cook",
+      "Damage & Fracture Mechanics",
+      "Experimental Validation & V&V",
+      "Manufacturing Process Simulation",
+    ],
   },
   {
-    title: "Languages & Tools",
+    label: "Data & Scientific Computing",
+    accent: "green",
     items: [
-      { key: "python", name: "Python" },
-      { key: "matlab", name: "MATLAB" },
-      { key: "numpy", name: "NumPy" },
-      { key: "scipy", name: "SciPy" },
-      { key: "pandas", name: "Pandas" },
-      { key: "git", name: "Git" },
-      { key: "docker", name: "Docker" },
-      { key: "bedrock", name: "AWS Bedrock" },
-      { key: "vertex", name: "Google Vertex AI" }
-    ]
-  }
+      "Python",
+      "MATLAB",
+      "NumPy / SciPy",
+      "Pandas",
+      "Open3D / Trimesh",
+      "Geometric Priors",
+      "Constraint-Aware Optimization",
+    ],
+  },
+  {
+    label: "Engineering & Infrastructure",
+    accent: "orange",
+    items: [
+      "Git",
+      "Docker",
+      "AWS Bedrock",
+      "Vertex AI",
+      "FDA Regulatory (ML in Production)",
+      "CI/CD for ML Pipelines",
+    ],
+  },
 ];

@@ -3,7 +3,16 @@ import { projects } from "../data/projects";
 export default function Projects() {
   return (
     <div className="container featured-projects">
-      <h2 className="section-title">Featured Projects</h2>
+      <h2 className="section-title">
+        <svg className="section-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="2" y="7" width="20" height="14" rx="2" />
+          <path d="M12 7V3" />
+          <path d="M8 3h8" />
+          <path d="M7 12h4" />
+          <path d="M7 16h10" />
+        </svg>
+        Featured Projects
+      </h2>
       <div className="fp-list">
         {projects.map((p, idx) => (
           <article key={p.title} className="fp-item reveal">
