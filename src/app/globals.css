@@ -520,3 +520,53 @@ footer {
 .nav-links .nav-link:hover::after {
   opacity: 1;
 }
+
+/* Work Experience */
+.we-role { margin-bottom: 36px; }
+.we-role:last-child { margin-bottom: 0; }
+.we-role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.we-company {
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 700;
+  color: var(--text);
+}
+.we-title { font-size: 14px; margin-top: 2px; }
+.we-meta {
+  text-align: right;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+}
+.we-project.fp-item {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 600px) {
+  .we-role-header { flex-direction: column; }
+  .we-meta { text-align: left; }
+}
+
+/* Education */
+.edu-grid { display: grid; gap: 16px; }
+@media (min-width: 600px) { .edu-grid { grid-template-columns: 1fr 1fr; } }
+.edu-card {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: border-color .2s ease;
+}
+.edu-card:hover { border-color: rgba(217,119,87,0.35); }
+.edu-school { font-size: 18px; font-weight: 700; color: var(--text); }
+.edu-degree { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.edu-meta { font-size: 13px; color: var(--muted); margin-top: 8px; display: flex; justify-content: space-between; }
