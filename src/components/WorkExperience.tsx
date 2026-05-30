@@ -3,6 +3,7 @@ type Project = {
   category: string;
   description: string;
   tech: string[];
+  video?: string;
 };
 
 type Role = {
@@ -63,6 +64,7 @@ const roles: Role[] = [
         category: "Honeywell",
         description: "Developed a 2D finite element model in ABAQUS with Johnson-Cook plasticity and damage criteria to simulate serrated chip formation during turning of Ti-6Al-4V. Investigated the effect of fracture energy on chip morphology. Analyzed machinability of additively manufactured Ti-6Al-4V, A205, and 17-4 SS through a full factorial DOE with SEM-EDS microstructural characterization.",
         tech: ["ABAQUS", "Johnson-Cook", "SEM-EDS", "DOE"],
+        video: "/ti-cutting-sim.mp4",
       },
     ],
   },
@@ -94,7 +96,7 @@ export default function WorkExperience() {
 
           <div className="fp-list">
             {role.projects.map((p) => (
-              <article key={p.title} className="fp-item we-project reveal">
+              <article key={p.title} className={`fp-item ${p.video ? "" : "we-project"} reveal`}>
                 <div className="fp-accent" aria-hidden="true" />
                 <div className="fp-content">
                   <div className="fp-category">{p.category}</div>
@@ -108,6 +110,25 @@ export default function WorkExperience() {
                     </div>
                   )}
                 </div>
+                {p.video && (
+                  <div className="we-video">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "12px",
+                        border: "1px solid var(--border)",
+                      }}
+                    >
+                      <source src={p.video} type="video/mp4" />
+                    </video>
+                  </div>
+                )}
               </article>
             ))}
           </div>

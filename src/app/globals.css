@@ -550,6 +550,11 @@ footer {
 .we-project.fp-item {
   grid-template-columns: 1fr;
 }
+.we-video {
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 200px;
+}
 @media (max-width: 600px) {
   .we-role-header { flex-direction: column; }
   .we-meta { text-align: left; }
