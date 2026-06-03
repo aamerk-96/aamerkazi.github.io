@@ -1,9 +1,15 @@
+type VideoPair = {
+  left: { src: string; label: string };
+  right: { src: string; label: string };
+};
+
 type Project = {
   title: string;
   category: string;
   description: string;
   tech: string[];
   video?: string;
+  videoPair?: VideoPair;
 };
 
 type Role = {
@@ -58,6 +64,10 @@ const roles: Role[] = [
         category: "U.S. DOE",
         description: "Developed a finite element model in ABAQUS for PDC rock cutting simulation using the Drucker-Prager yield criterion with damage evolution to capture failure of granite under varying crack density, orientation, and confining pressure (0-100 MPa). Calibrated constitutive model parameters through uniaxial and diametrical compression testing with experimental validation. Built a MATLAB-based node separation algorithm for parametric crack studies. Constructed a laboratory-scale rock drilling setup demonstrating 30% reduction in cutting forces from plasma-induced pre-cracking.",
         tech: ["ABAQUS", "Drucker-Prager", "MATLAB", "V&V"],
+        videoPair: {
+          left: { src: "/high_speed_video.mp4", label: "Experiment" },
+          right: { src: "/simulation.mp4", label: "Simulation" },
+        },
       },
       {
         title: "Machining of Additively Manufactured Metals",
@@ -96,7 +106,10 @@ export default function WorkExperience() {
 
           <div className="fp-list">
             {role.projects.map((p) => (
-              <article key={p.title} className={`fp-item ${p.video ? "" : "we-project"} reveal`}>
+              <article
+                key={p.title}
+                className={`fp-item ${p.video || p.videoPair ? "" : "we-project"} reveal`}
+              >
                 <div className="fp-accent" aria-hidden="true" />
                 <div className="fp-content">
                   <div className="fp-category">{p.category}</div>
@@ -110,23 +123,39 @@ export default function WorkExperience() {
                     </div>
                   )}
                 </div>
+
                 {p.video && (
                   <div className="we-video">
                     <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
+                      autoPlay loop muted playsInline
                       style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        borderRadius: "12px",
+                        width: "100%", height: "100%",
+                        objectFit: "cover", borderRadius: "12px",
                         border: "1px solid var(--border)",
                       }}
                     >
                       <source src={p.video} type="video/mp4" />
                     </video>
+                  </div>
+                )}
+
+                {p.videoPair && (
+                  <div className="we-video-pair">
+                    {[p.videoPair.left, p.videoPair.right].map((v) => (
+                      <div key={v.label} className="we-video-cell">
+                        <video
+                          autoPlay loop muted playsInline
+                          style={{
+                            width: "100%", height: "100%",
+                            objectFit: "cover", borderRadius: "10px",
+                            border: "1px solid var(--border)",
+                          }}
+                        >
+                          <source src={v.src} type="video/mp4" />
+                        </video>
+                        <div className="we-video-label">{v.label}</div>
+                      </div>
+                    ))}
                   </div>
                 )}
               </article>

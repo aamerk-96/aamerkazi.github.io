@@ -6,7 +6,7 @@ export default function Hero() {
         <div className="container hero-grid">
             <div className="hero-left">
                 <div className="hero-name">Aamer Kazi</div>
-                <div className="hero-title">Research, FEA, AI and ML at Align Technology</div>
+                <div className="hero-title">FEA and Deep Learning at Align Technology</div>
             </div>
             <div className="hero-right">
                 <div className="avatar-circle">
