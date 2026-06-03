@@ -9,9 +9,6 @@ export default function Contact() {
       </h2>
       <div className="card pop-card contact-card">
         <div className="contact-card-header">
-          <div>
-            <div className="contact-kicker">Open to thoughtful conversations</div>
-          </div>
         </div>
 
         <div className="contact-methods">
