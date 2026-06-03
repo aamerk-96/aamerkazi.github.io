@@ -41,7 +41,7 @@ export default function Contact() {
             </span>
             <span className="contact-copy">
               <span className="contact-label">LinkedIn</span>
-              <span className="contact-value">linkedin.com/in/aamerk4716</span>
+              <span className="contact-value">linkedin.com/in/aamerk4716/</span>
             </span>
           </a>
         </div>
