@@ -51,7 +51,7 @@ export default function Header() {
           <a className="icon-link" href="https://github.com/aamerk-96" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fillRule="evenodd" clipRule="evenodd" d="M12 .5a11.5 11.5 0 0 0-3.63 22.41c.57.1.78-.25.78-.56v-2.1c-3.18.69-3.85-1.37-3.85-1.37-.52-1.33-1.27-1.69-1.27-1.69-1.04-.7.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.54-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17.91-.26 1.88-.39 2.85-.39.97 0 1.94.13 2.85.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.22 5.63.41.36.77 1.07.77 2.17v3.22c0 .31.21.66.79.55A11.5 11.5 0 0 0 12 .5Z" fill="currentColor"/></svg>
           </a>
-          <a className="icon-link" href="#" aria-label="Google Scholar">
+          <a className="icon-link" href="https://scholar.google.com/citations?hl=en&user=9CJt2xcAAAAJ&view_op=list_works" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M12 4l10 5-10 5L2 9l10-5z" fill="currentColor"/>
               <path d="M6 12.5v2.5c0 1.6 2.9 2.9 6 2.9s6-1.3 6-2.9v-2.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>

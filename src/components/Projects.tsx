@@ -33,10 +33,22 @@ export default function Projects() {
               <span className="chip chip-tech">Transformers</span>
               <span className="chip chip-tech">Python</span>
             </div>
-            <div style={{ marginTop: "16px" }}>
+            <div style={{ display: "flex", gap: "10px", marginTop: "16px", alignItems: "center" }}>
               <Link href="/recipegpt" className="badge" style={{ textDecoration: "none", cursor: "pointer" }}>
                 {"Working Demo →"}
               </Link>
+              <a
+                href="https://github.com/aamerk-96/RecipeGPT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="chip"
+                style={{ display: "inline-flex", alignItems: "center", gap: "5px", textDecoration: "none", fontSize: 12 }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 .5a11.5 11.5 0 0 0-3.63 22.41c.57.1.78-.25.78-.56v-2.1c-3.18.69-3.85-1.37-3.85-1.37-.52-1.33-1.27-1.69-1.27-1.69-1.04-.7.08-.69.08-.69 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.53-2.54-.29-5.2-1.27-5.2-5.64 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17.91-.26 1.88-.39 2.85-.39.97 0 1.94.13 2.85.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.38-2.67 5.35-5.22 5.63.41.36.77 1.07.77 2.17v3.22c0 .31.21.66.79.55A11.5 11.5 0 0 0 12 .5Z" />
+                </svg>
+                GitHub
+              </a>
             </div>
           </div>
 
