@@ -437,8 +437,8 @@ footer {
   overflow: hidden;
 }
 .fp-item:hover {
-  border-color: rgba(217,119,87,0.35);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border-color: rgba(217,119,87,0.2);
+  box-shadow: 0 0 40px rgba(217,119,87,0.06), 0 0 80px rgba(217,119,87,0.03);
 }
 .fp-content { position: relative; z-index: 2; }
 .fp-accent {
@@ -501,6 +501,145 @@ footer {
 
 @media (max-width: 900px) {
   .fp-item { grid-template-columns: 1fr; }
+}
+
+/* ── RecipeGPT Chat Mockup ── */
+.rgpt-mockup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.rgpt-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.rgpt-dots {
+  display: flex;
+  gap: 5px;
+}
+.rgpt-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-hover);
+}
+.rgpt-dots span:first-child { background: #ef7767; }
+.rgpt-dots span:nth-child(2) { background: #f5c542; }
+.rgpt-dots span:last-child { background: #6bc76b; }
+.rgpt-app-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.rgpt-chat {
+  flex: 1;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  min-height: 200px;
+  max-height: 320px;
+}
+
+/* Messages */
+.rgpt-msg {
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+.rgpt-msg-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.rgpt-msg-bot {
+  align-self: flex-start;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+  color: var(--text);
+}
+
+.rgpt-msg-text {
+  white-space: pre-line;
+}
+
+.rgpt-recipe-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+.rgpt-recipe-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.rgpt-tag {
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 999px;
+  background: rgba(217,119,87,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(217,119,87,0.25);
+}
+
+/* Input bar */
+.rgpt-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--card-bg);
+}
+.rgpt-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+.rgpt-placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+.rgpt-send {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: default;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
 }
 .nav-links .nav-link {
   position: relative;
