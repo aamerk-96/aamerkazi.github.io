@@ -1,3 +1,5 @@
+"use client";
+
 type VideoPair = {
   left: { src: string; label: string };
   right: { src: string; label: string };
@@ -6,7 +8,7 @@ type VideoPair = {
 type Project = {
   title: string;
   category: string;
-  description: string;
+  bullets: string[];
   tech: string[];
   video?: string;
   videoPair?: VideoPair;
@@ -30,26 +32,31 @@ const roles: Role[] = [
       {
         title: "Deep Learning Enhanced Treatment Planning for the Invisalign System",
         category: "ML / Deep Learning",
-        description: "Developed production ML/DL models for orthodontic treatment planning, iterating from multivariable regression to a Transformer architecture (multi-head attention) that contributed to a 20% increase in clinical efficacy for millions of patients annually. Led V&V under FDA regulatory oversight across 13+ demographic and clinical dimensions. Generated surrogate training labels via counterfactual analysis across 30,000+ cases, framing attachment placement as a Learning-to-Rank problem (LightGBM LambdaRank) deployed to production processing 1,000+ cases/week.",
+        bullets: [
+          "Developed production ML/DL models for orthodontic treatment planning, iterating from multivariable regression to a Transformer architecture (multi-head attention, PyTorch) that contributed to a 20% increase in clinical efficacy for millions of patients annually",
+          "Led verification & validation for all model generations under FDA regulatory oversight; performed data-slice analysis across 13+ demographic and clinical dimensions, physics-based simulation validation, and detailed AI model reporting ensuring no subpopulation degradation",
+          "Generated surrogate training labels via counterfactual analysis through the production Transformer across 30,000+ cases, then framed attachment placement as a Learning-to-Rank problem (LightGBM LambdaRank); extracted interpretable clinical rules validated by domain experts and deployed to production processing 1,000+ cases/week",
+          "Led an end-to-end clinical study (APAC region) assembling a cross-functional team of clinical experts, software developers, and CAD designers",
+        ],
         tech: ["PyTorch", "Transformers", "LightGBM", "FDA V&V"],
       },
       {
         title: "LLM-based Dental Treatment Assistant & Evaluation Framework",
         category: "Agentic AI",
-        description: "Architected a LangGraph ReAct agent integrating LLMs (Claude, Llama, Gemini) over AWS Bedrock for natural-language querying and modification of orthodontic treatment data, with a 3-category evaluation framework. Built a middleware layer with query sanitization and complexity classification for dynamic per-request model routing; currently being tested as a case screening tool for clinical studies.",
-        tech: ["LangGraph", "AWS Bedrock", "Claude", "Llama"],
+        bullets: [
+          "Architected a LangChain ReAct agent integrating LLMs (Claude, Llama, Gemini) over AWS Bedrock for natural-language querying and modification of orthodontic treatment data, with a 3-category evaluation framework (classification accuracy, calculation tolerance, LLM-as-Judge format compliance)",
+          "Built a middleware layer with query sanitization and complexity classification for dynamic per-request model routing; currently being tested as a case screening tool for clinical studies",
+        ],
+        tech: ["LangChain", "AWS Bedrock", "LLM-as-Judge", "Python"],
       },
       {
         title: "3D Shape Representation Learning for Orthodontic Attachments",
         category: "Geometric Deep Learning",
-        description: "Built a DiffusionNet-based mesh autoencoder encoding variable-topology 3D meshes into 8-12D latent vectors at sub-millimeter fidelity. Conducted systematic AE vs beta-VAE comparison across reconstruction fidelity, generative specificity, disentanglement, and interpolation smoothness. Designed embeddings as drop-in geometric features for the downstream treatment planning Transformer.",
-        tech: ["DiffusionNet", "PyTorch", "Open3D", "beta-VAE"],
-      },
-      {
-        title: "Clinical Study Lead, APAC Region",
-        category: "Clinical Research",
-        description: "Led an end-to-end clinical study assembling a cross-functional team of clinical experts, software developers, and CAD designers. Performed statistical power analysis via KNN-based case similarity search for sample size calculation.",
-        tech: ["KNN", "Statistical Analysis", "JMP"],
+        bullets: [
+          "Built a DiffusionNet-based mesh autoencoder encoding variable-topology 3D meshes into 8-12D latent vectors at sub-millimeter fidelity; conducted systematic AE vs beta-VAE comparison across multiple quantitative metrics (reconstruction fidelity, generative specificity, disentanglement, interpolation smoothness)",
+          "Designed embeddings as drop-in geometric features for the downstream treatment planning Transformer, replacing categorical attachment labels with continuous geometric descriptors",
+        ],
+        tech: ["DiffusionNet", "PyTorch", "AE", "Representation Learning"],
       },
     ],
   },
@@ -62,7 +69,12 @@ const roles: Role[] = [
       {
         title: "Finite Element Modeling of Rock Drilling Processes",
         category: "U.S. DOE",
-        description: "Developed a finite element model in ABAQUS for PDC rock cutting simulation using the Drucker-Prager yield criterion with damage evolution to capture failure of granite under varying crack density, orientation, and confining pressure (0-100 MPa). Calibrated constitutive model parameters through uniaxial and diametrical compression testing with experimental validation. Built a MATLAB-based node separation algorithm for parametric crack studies. Constructed a laboratory-scale rock drilling setup demonstrating 30% reduction in cutting forces from plasma-induced pre-cracking.",
+        bullets: [
+          "Developed a finite element model in ABAQUS for PDC rock cutting simulation using the Drucker-Prager yield criterion with damage evolution to capture failure of granite under varying crack density, orientation, and confining pressure (0-100 MPa)",
+          "Calibrated constitutive model parameters through uniaxial and diametrical compression testing; cross-referenced cutting forces predicted by the finite element simulation with experimental results for validation",
+          "Built a MATLAB-based node separation algorithm generating random pre-existing cracks between elements based on configurable crack density parameters, enabling parametric study of crack effects on cutting forces and mechanism",
+          "Constructed a laboratory-scale rock drilling setup on a CNC mill, demonstrating 30% reduction in cutting and thrust forces from plasma-induced pre-cracking",
+        ],
         tech: ["ABAQUS", "Drucker-Prager", "MATLAB", "V&V"],
         videoPair: {
           left: { src: "/high_speed_video.mp4", label: "Experiment" },
@@ -72,7 +84,10 @@ const roles: Role[] = [
       {
         title: "Machining of Additively Manufactured Metals",
         category: "Honeywell",
-        description: "Developed a 2D finite element model in ABAQUS with Johnson-Cook plasticity and damage criteria to simulate serrated chip formation during turning of Ti-6Al-4V. Investigated the effect of fracture energy on chip morphology. Analyzed machinability of additively manufactured Ti-6Al-4V, A205, and 17-4 SS through a full factorial DOE with SEM-EDS microstructural characterization.",
+        bullets: [
+          "Developed a 2D finite element model in ABAQUS with Johnson-Cook plasticity and damage criteria to simulate serrated chip formation during turning of Ti-6Al-4V; investigated the effect of fracture energy on chip morphology",
+          "Analyzed machinability of additively manufactured Ti-6Al-4V, A205, and 17-4 SS through a full factorial DOE with SEM-EDS microstructural characterization",
+        ],
         tech: ["ABAQUS", "Johnson-Cook", "SEM-EDS", "DOE"],
         video: "/ti-cutting-sim.mp4",
       },
@@ -114,7 +129,11 @@ export default function WorkExperience() {
                 <div className="fp-content">
                   <div className="fp-category">{p.category}</div>
                   <h3 className="fp-title">{p.title}</h3>
-                  <p className="fp-desc muted">{p.description}</p>
+                  <ul className="fp-bullets muted">
+                    {p.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
                   {p.tech.length > 0 && (
                     <div className="fp-tags">
                       {p.tech.map((t) => (
